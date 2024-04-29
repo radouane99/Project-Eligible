@@ -1,0 +1,8 @@
+# Redirect requests from HTTP to HTTPS
+RewriteEngine On
+RewriteBase /
+
+# Rewrite URLs for clean URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ src/index.php [QSA,L]
